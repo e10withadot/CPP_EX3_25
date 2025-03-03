@@ -5,6 +5,7 @@
 #include "Ambassador.hpp"
 #include "Captain.hpp"
 #include "Contessa.hpp"
+#include "Bureaucrat.hpp"
 #include "Game.hpp"
 
 #include <exception>
