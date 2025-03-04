@@ -1,3 +1,5 @@
+# Updated Coup Game - Demonstration Code
+
 #include "Player.hpp"
 #include "Governor.hpp"
 #include "Spy.hpp"
@@ -8,6 +10,7 @@
 #include "Game.hpp"
 
 #include <exception>
+using namespace coup;
 #include <iostream>
 #include <stdexcept>
 #include <vector>
@@ -21,13 +24,20 @@ int main() {
     Baron baron(game_1, "Meirav");
     General general(game_1, "Reut");
     Judge judge(game_1, "Gilad");
-    Merchant merchant(game_1, "Daniel");
 
     vector<string> players = game_1.players();
+    
+    // Expected output:
+    // Moshe
+    // Yossi
+    // Meirav
+    // Reut
+    // Gilad
     for(string name : players){
         cout << name << endl;
     }
 
+    // Expected output: Moshe
     cout << game_1.turn() << endl;
 
     governor.gather();
@@ -35,36 +45,54 @@ int main() {
     baron.gather();
     general.gather();
     judge.gather();
-    merchant.gather();
 
+    // Expected exception - Not spy's turn
     try{
         spy.gather();
     } catch (const std::exception &e){
         std::cerr << e.what() << '\n';
     }
 
-    governor.tax();  
-    spy.spy_on(baron); 
-    baron.invest();  
-    general.prevent_coup(judge);  
-    judge.block_bribe(merchant);  
-    merchant.gather(); 
+    governor.gather();
+    spy.tax();
 
-  
+    // Expected exception - Judge cannot block tax
     try{
-        judge.block_bribe(governor);  
-    } catch (const std::exception &e){
+        judge.block(governor);
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 
-    cout << "מטבעות של הברון: " << baron.coins() << endl;
-    cout << "מטבעות של הסוחר: " << merchant.coins() << endl;
+    cout << governor.coins() << endl; // Expected: 2
+    cout << spy.coins() << endl; // Expected: 3
 
-    try{
-        general.coup(governor);
-    } catch (const std::exception &e){
-        std::cerr << e.what() << '\n';
+    governor.block(spy); // Governor blocks tax
+    cout << spy.coins() << endl; // Expected: 1
+
+    baron.invest(); 
+    general.gather();
+    judge.gather(); 
+
+    governor.tax();
+    spy.gather();
+    baron.tax();
+    general.gather();
+    judge.gather();
+    
+    cout << baron.coins() << endl; // Expected: 7
+
+    governor.tax();
+    spy.gather();
+    baron.coup(governor); // Coup against governor
+
+    players = game_1.players();
+    // Expected output:
+    // Yossi
+    // Meirav
+    // Reut
+    // Gilad
+    for (string name : players) {
+        cout << name << endl;
     }
 
-    return 0;
 }
