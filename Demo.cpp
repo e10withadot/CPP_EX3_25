@@ -1,4 +1,3 @@
-# Updated Coup Game - Demonstration Code
 
 #include "Player.hpp"
 #include "Governor.hpp"
@@ -10,11 +9,11 @@
 #include "Game.hpp"
 
 #include <exception>
-using namespace coup;
 #include <iostream>
 #include <stdexcept>
 #include <vector>
 using namespace std;
+using namespace coup;
 
 int main() {
     Game game_1{};
@@ -69,7 +68,7 @@ int main() {
     governor.block(spy); // Governor blocks tax
     cout << spy.coins() << endl; // Expected: 1
 
-    baron.invest(); 
+    baron.invest(); // Baron traded its 3 coins and got 5 
     general.gather();
     judge.gather(); 
 
@@ -84,9 +83,11 @@ int main() {
     governor.tax();
     spy.gather();
     baron.coup(governor); // Coup against governor
-
+    general.gather();
+    judge.gather();
+    
     players = game_1.players();
-    // Expected output:
+    // Since no one blocked the Baron, the expected output is:
     // Yossi
     // Meirav
     // Reut
