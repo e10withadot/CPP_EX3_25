@@ -68,13 +68,13 @@ int main() {
     governor.block(spy); // Governor blocks tax
     cout << spy.coins() << endl; // Expected: 1
 
-    baron.invest(); // Baron traded its 3 coins and got 5 
+    baron.invest(); // Baron traded its 3 coins and got 6 
     general.gather();
     judge.gather(); 
 
     governor.tax();
     spy.gather();
-    baron.tax();
+    baron.gather();
     general.gather();
     judge.gather();
     
