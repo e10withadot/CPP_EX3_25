@@ -24,6 +24,7 @@
 3. **פרטי ה-commit האחרון** – המחרוזת המזהה של ה-commit האחרון (`commit hash`) 
 
  - דוגמה לקובץ הגשה תקין:
+    </div>
 ```
 123456789
 https://github.com/example-user/my-assignment
