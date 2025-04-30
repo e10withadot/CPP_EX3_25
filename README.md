@@ -26,7 +26,7 @@
  - דוגמה לקובץ הגשה תקין:
 ```
 123456789
-https://github.com/example-user/graph-assignment
+https://github.com/example-user/my-assignment
 e3f1c1a 
 ```
 
