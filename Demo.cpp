@@ -55,9 +55,9 @@ int main() {
     governor.gather();
     spy.tax();
 
-    // Expected exception - Judge cannot block tax
+    // Expected exception - Judge cannot undo tax
     try{
-        judge.block(governor);
+        judge.undo(governor);
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -65,7 +65,7 @@ int main() {
     cout << governor.coins() << endl; // Expected: 2
     cout << spy.coins() << endl; // Expected: 3
 
-    governor.block(spy); // Governor blocks tax
+    governor.undo(spy); // Governor undo tax
     cout << spy.coins() << endl; // Expected: 1
 
     baron.invest(); // Baron traded its 3 coins and got 6 
