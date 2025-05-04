@@ -82,6 +82,13 @@ int main() {
 
     governor.tax();
     spy.gather();
+    baron.gather();
+    general.gather();
+    judge.gather();
+
+    governor.tax();
+    spy.gather();
+    cout << baron.coins() << endl; // Expected: 7
     baron.coup(governor); // Coup against governor
     general.gather();
     judge.gather();
