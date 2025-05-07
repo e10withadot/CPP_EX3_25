@@ -68,27 +68,20 @@ int main() {
     governor.undo(spy); // Governor undo tax
     cout << spy.coins() << endl; // Expected: 1
 
-    baron.tax();
-    general.gather();
-    judge.gather(); 
-
-    governor.tax();
-    spy.gather();
     baron.invest(); // Baron traded its 3 coins and got 6 
     general.gather();
-    judge.gather();
-    
-    cout << baron.coins() << endl; // Expected: 6
+    judge.gather(); 
 
     governor.tax();
     spy.gather();
     baron.gather();
     general.gather();
     judge.gather();
+    
+    cout << baron.coins() << endl; // Expected: 7
 
     governor.tax();
     spy.gather();
-    cout << baron.coins() << endl; // Expected: 7
     baron.coup(governor); // Coup against governor
     general.gather();
     judge.gather();
