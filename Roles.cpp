@@ -1,7 +1,6 @@
+// ey.gellis@gmail.com
 #include "Roles.hpp"
 #include "Game.hpp"
-#include <iostream>
-#include <stdexcept>
 using namespace coup;
 
 Action* Spy::see_coins(Player* target) {

@@ -1,8 +1,8 @@
+// ey.gellis@gmail.com
 #include "Game.hpp"
 using namespace coup;
 #include <stdexcept>
 #include <vector>
-#include <iostream>
 using namespace std;
 
 Game::~Game() {

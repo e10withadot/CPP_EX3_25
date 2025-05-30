@@ -1,8 +1,8 @@
+// ey.gellis@gmail.com
 #include <QDialog>
 #include <QCloseEvent>
 #include <QRandomGenerator>
 #include "MainWindow.hpp"
-#include "Game.hpp"
 #include "GameWindow.hpp"
 using namespace gui;
 #include <vector>

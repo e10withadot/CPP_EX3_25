@@ -1,3 +1,4 @@
+// ey.gellis@gmail.com
 #ifndef PLAYER_H
 #define PLAYER_H
 namespace coup {

@@ -1,3 +1,4 @@
+// ey.gellis@gmail.com
 #ifndef ROLES_H
 #define ROLES_H
 #include "Game.hpp"

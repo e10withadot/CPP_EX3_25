@@ -1,3 +1,4 @@
+// ey.gellis@gmail.com
 #include "MainWindow.hpp"
 using namespace gui;
 

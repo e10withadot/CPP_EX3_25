@@ -1,3 +1,4 @@
+// ey.gellis@gmail.com
 #include "Player.hpp"
 #include "Game.hpp"
 using namespace coup;

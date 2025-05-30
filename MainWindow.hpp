@@ -1,3 +1,4 @@
+// ey.gellis@gmail.com
 #include <Qt>
 #include <QApplication>
 #include <QLabel>
